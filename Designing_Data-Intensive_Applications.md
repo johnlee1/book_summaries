@@ -1,4 +1,4 @@
-# Designning Data-Intensive Applications by Martin Kleppmann
+# Designing Data-Intensive Applications by Martin Kleppmann
 
 ## Chapter 1 - Reliable, Scalable, and Maintainable Applications
 * "*Reliability* means making systems work correctly, even when faults occur. Faults can be in hardware (typically random and uncorrelated), 
