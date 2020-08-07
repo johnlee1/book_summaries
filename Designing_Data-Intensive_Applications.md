@@ -11,6 +11,8 @@ Good abstractions can ehlp reduce complexity and make the system easier to modif
 the system's health, and having effective ways of managing it." (pg. 23)
 
 ## Chapter 2 - Data Models and Query Languages
-### Relational verses Document Databases
 * "The main arguments in favor of the document data model are schema flexibility, better performance due to locality, and that for some applications it is closer to the data structures used by the application. The relational model counters by providing better support for joins, and many-to-one and many-to-many relationships." (pg. 38)
+* "*Document databases* target use cases where data comes in self-contained documents and relationships between one document and another are rare. *Graph databases* go in the opposite direction, targeting use cases where anything is potentially related to everything." (pg. 63)
+* "One thing that document and graph databass have in common is that they typically don't enforce a schema for the data they store, which can make it easier to adapt applications to changing requirements. However, your application most likely still assumes that data has a certain structure; it's just a question of whether the schema is explicit (enforced on write) or implicit (handled on read)." (pg. 63)
 
+## Chapter 3 - Storage and Retrieval
