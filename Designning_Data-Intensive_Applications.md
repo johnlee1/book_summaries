@@ -9,3 +9,8 @@ load and performance quantitatively... In a scalable system, you can add process
 * "*Maintainability* has many facets, but in essence it's about making life better for the engineering and operations teams who need to work wih the system.
 Good abstractions can ehlp reduce complexity and make the system easier to modify and adapt for new use cases. Good operability means having good visibility into
 the system's health, and having effective ways of managing it." (pg. 23)
+
+## Chapter 2 - Data Models and Query Languages
+### Relational verses Document Databases
+* "The main arguments in favor of the document data model are schema flexibility, better performance due to locality, and that for some applications it is closer to the data structures used by the application. The relational model counters by providing better support for joins, and many-to-one and many-to-many relationships." (pg. 38)
+
