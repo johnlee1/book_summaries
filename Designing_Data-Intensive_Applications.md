@@ -3,16 +3,21 @@
 ## Chapter 1 - Reliable, Scalable, and Maintainable Applications
 * "*Reliability* means making systems work correctly, even when faults occur. Faults can be in hardware (typically random and uncorrelated), 
 software (bugs are typically systematic and hard to deal with), and humans (who inevitably make mistakes from time to time). Fault-tolerance techniques can hide 
-certain types of faults from the end user." (pg. 22)
+certain types of faults from the end user." (22)
 * "*Scalability* means having strategies for keeping performance good, even when load increases. In order to discuss scalability, we first need ways of describing 
-load and performance quantitatively... In a scalable system, you can add processing capacity in order to remain reliable under high load." (pg. 22-23)
+load and performance quantitatively... In a scalable system, you can add processing capacity in order to remain reliable under high load." (22-23)
 * "*Maintainability* has many facets, but in essence it's about making life better for the engineering and operations teams who need to work wih the system.
 Good abstractions can ehlp reduce complexity and make the system easier to modify and adapt for new use cases. Good operability means having good visibility into
-the system's health, and having effective ways of managing it." (pg. 23)
+the system's health, and having effective ways of managing it." (23)
 
 ## Chapter 2 - Data Models and Query Languages
-* "The main arguments in favor of the document data model are schema flexibility, better performance due to locality, and that for some applications it is closer to the data structures used by the application. The relational model counters by providing better support for joins, and many-to-one and many-to-many relationships." (pg. 38)
-* "*Document databases* target use cases where data comes in self-contained documents and relationships between one document and another are rare. *Graph databases* go in the opposite direction, targeting use cases where anything is potentially related to everything." (pg. 63)
-* "One thing that document and graph databass have in common is that they typically don't enforce a schema for the data they store, which can make it easier to adapt applications to changing requirements. However, your application most likely still assumes that data has a certain structure; it's just a question of whether the schema is explicit (enforced on write) or implicit (handled on read)." (pg. 63)
+* "The main arguments in favor of the document data model are schema flexibility, better performance due to locality, and that for some applications it is closer to the data structures used by the application. The relational model counters by providing better support for joins, and many-to-one and many-to-many relationships." (38)
+* "*Document databases* target use cases where data comes in self-contained documents and relationships between one document and another are rare. *Graph databases* go in the opposite direction, targeting use cases where anything is potentially related to everything." (63)
+* "One thing that document and graph databass have in common is that they typically don't enforce a schema for the data they store, which can make it easier to adapt applications to changing requirements. However, your application most likely still assumes that data has a certain structure; it's just a question of whether the schema is explicit (enforced on write) or implicit (handled on read)." (63)
 
 ## Chapter 3 - Storage and Retrieval
+* "...storage engines fall into two broad categories: those optimized for transaction processing (OLTP), and those optimized for analytics (OLAP)." (103)
+* "OLTP systems are typically user-facing, which means that they may see a huge volume of requests. In order to handle the load, applications usually only touch a small number of records in each query. The application requests records using some kind of key, and the storage engine uses an index to find the data for the requested key. Disk seek time is often the bottleneck here." (103)
+* "Data warehouses and similar analytic systems are less well known, because they are primarily used by business analysts, not by end users. They handle a much lower volume of queries than OLTP systems, but each query is typically very demanding, requiring many millions of records to be scanned in a short time. Disk bandwidth (not seek time) is often the bottleneck here, and column-oriented storage is an increasingly popular solution for this kind of workload." (103)
+* "On the OLTP side, we saw storage engines from two main schools of thought: The log-structured school, which only permits appending to files and deleting obsolete files, but never updates a file that has been written. The update-in-place school, which treats the disk as a set of fixed-size pages that can be overwritten. B-trees are the biggest example of this philosophy, being used in all major relational databases and also many nonrelational ones." (103)
+* Log-structured storage engines are a comparatively recent development. Their key idea is that they systematically turn random-access writes into sequential writes on disk, which enables higher write throughput due to the performance characteristics of hard drives and SSDs.
