@@ -7,7 +7,7 @@ certain types of faults from the end user." (22)
 * "*Scalability* means having strategies for keeping performance good, even when load increases. In order to discuss scalability, we first need ways of describing 
 load and performance quantitatively... In a scalable system, you can add processing capacity in order to remain reliable under high load." (22-23)
 * "*Maintainability* has many facets, but in essence it's about making life better for the engineering and operations teams who need to work wih the system.
-Good abstractions can ehlp reduce complexity and make the system easier to modify and adapt for new use cases. Good operability means having good visibility into
+Good abstractions can help reduce complexity and make the system easier to modify and adapt for new use cases. Good operability means having good visibility into
 the system's health, and having effective ways of managing it." (23)
 
 ## Chapter 2 - Data Models and Query Languages
